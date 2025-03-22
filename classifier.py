@@ -23,7 +23,7 @@ for i in range(0, len(df), batch_size):
     if isinstance(results, dict):
         results = [results]
 
-    print(f"First {i + batch_size} done.....")
+    print(f"First {i + batch_size} companies done.....")
     batch_top_labels = [", ".join(res['labels'][:10]) for res in results]
 
     df.loc[i:i+len(batch_top_labels)-1, "insurance_label"] = batch_top_labels
